@@ -10,13 +10,15 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NasaCarousel } from './components/nasa-carousel/nasa-carousel.component';
 import { DatePipe } from '@angular/common';
+import { IntroductionComponent } from './components/introduction/introduction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AstronautOverviewComponent,
     NavBarComponent,
-    NasaCarousel
+    NasaCarousel,
+    IntroductionComponent
   ],
   imports: [
     BrowserModule,
