@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { NasaImage } from 'src/app/models/nasa-image.model';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-nasa-carousel',
@@ -32,11 +33,9 @@ export class NasaCarousel implements OnInit {
         .set('date', dateParam);
 
       this.http.get(`${this.baseUrl}`,
-        { params: params })
+        { params: params }).pipe(
+        filter(i => !(i['url'].substring(0, this.disallowedUrl.length) === this.disallowedUrl)))
         .subscribe(i => {
-          if (i['url'].substring(0, this.disallowedUrl.length) === this.disallowedUrl) {
-            return;
-          } else {
             const nasaImage: NasaImage = {
               copyright: i['copyright'],
               date: i['date'],
@@ -47,7 +46,7 @@ export class NasaCarousel implements OnInit {
             };
             this.nasaImages.push(nasaImage);
           }
-        });
+        );
     }
   }
 }
