@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertModule, AccordionModule, CarouselModule } from 'ngx-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './components/home/home.component';
+import { NasaCarousel } from './components/nasa-carousel/nasa-carousel.component';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { DatePipe } from '@angular/common';
     AppComponent,
     AstronautOverviewComponent,
     NavBarComponent,
-    HomeComponent
+    NasaCarousel
   ],
   imports: [
     BrowserModule,
