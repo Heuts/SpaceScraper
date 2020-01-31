@@ -1,13 +1,33 @@
-<div class="container">
-    <h4>
-        Rotating images from NASA</h4>
-    <carousel>
-        <slide *ngFor="let nasaImage of nasaImages">
-            <div class="carousel-caption d-none d-md-block">
-                <h3>{{ nasaImage.title }}</h3>
-                <p>{{ nasaImage.explanation }}</p>
-            </div>
-            <img src="{{nasaImage.url}}" first slide style="display: block; width: 100%;">
-        </slide>
-    </carousel>
+<div class="container blog-post">
+  <h2 class="blog-post-title">Astronomy Pictures of the Day</h2>
+  <p class="blog-post-meta">
+    January 31, 2020 by
+    <a href="https://github.com/Heuts"
+      >Hugo Heuts <i class="fab fa-github"></i
+    ></a>
+  </p>
+
+  <p>
+    Discover the cosmos! This page calls an
+    <a href="https://api.nasa.gov/">open API of NASA</a> and projects the 20
+    most recent pictures below here. Each day a different image or photograph of
+    our fascinating universe is featured, along with a brief explanation written
+    by a professional astronomer. Enjoy! 🌌
+  </p>
+  <hr />
+  <h4></h4>
+  <carousel>
+    <slide *ngFor="let nasaImage of nasaImages">
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{ nasaImage.title }}</h3>
+        <p>{{ nasaImage.explanation }}</p>
+      </div>
+      <img
+        src="{{ nasaImage.url }}"
+        first
+        slide
+        style="display: block; width: 100%;"
+      />
+    </slide>
+  </carousel>
 </div>

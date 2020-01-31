@@ -1,10 +1,29 @@
-<div class="container">
-    <h4>
+<div class="container blog-post">
+  <h2 class="blog-post-title">Which humans are in space right now?</h2>
+  <p class="blog-post-meta">
+    January 31, 2020 by
+    <a href="https://github.com/Heuts"
+      >Hugo Heuts <i class="fab fa-github"></i
+    ></a>
+  </p>
 
-        Number of astronauts currently in space: {{ amountOfPeopleInSpace }}</h4>
-    <accordion [isAnimated]="true">
-        <accordion-group *ngFor="let astronaut of astronauts" heading="{{astronaut.name}}">
-            <i class="fas fa-space-shuttle"></i> Spacecraft: {{astronaut.craft}}
-        </accordion-group>
-    </accordion>
+  <p>
+    This page calls an
+    <a href="http://open-notify.org/Open-Notify-API/People-In-Space/"
+      >open API</a
+    >
+    which returns the current number of people in space. When known it also
+    returns the names and spacecraft those people are on. Click on the names to
+    see what spacecraft they are on! 👨‍🚀👩‍🚀 🚀
+  </p>
+
+  <hr />
+  <accordion [isAnimated]="true">
+    <accordion-group
+      *ngFor="let astronaut of astronauts"
+      heading="{{ astronaut.name }}"
+    >
+    🚀 Spacecraft: {{ astronaut.craft }}
+    </accordion-group>
+  </accordion>
 </div>
