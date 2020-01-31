@@ -1,6 +1,10 @@
 <div class="container">
-    <h5>
+    <h4>
         <i class="fas fa-user-astronaut"></i>
-        Numbers of astonauts in space: {{ amountOfPeopleInSpace }}</h5>
-    <p *ngFor="let astronaut of astronauts"> {{ astronaut.name }}</p>
+        Number of astronauts currently in space: {{ amountOfPeopleInSpace }}</h4>
+    <accordion [isAnimated]="true">
+        <accordion-group *ngFor="let astronaut of astronauts" heading="{{astronaut.name}}">
+            <i class="fas fa-satellite"></i> Craft: {{astronaut.craft}}
+        </accordion-group>
+    </accordion>
 </div>

@@ -14,7 +14,6 @@ export class AstronautOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.fetchAstronauts();
-    console.log(this.astronauts);
   }
 
   fetchAstronauts() {
