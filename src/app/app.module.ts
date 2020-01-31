@@ -7,12 +7,13 @@ import { AstronautOverviewComponent } from './components/astronaut-overview/astr
 import { HttpClientModule } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AstronautOverviewComponent,
-    NavBarComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
