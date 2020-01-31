@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AstronautOverviewComponent } from './components/astronaut-overview/astronaut-overview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AlertModule } from 'ngx-bootstrap';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AstronautOverviewComponent
+    AstronautOverviewComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AlertModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
