@@ -11,13 +11,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav flex-grow">
             <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                <a class="nav-link text-dark" [routerLink]="['/astronaut-overview']"><i
-                        class="fas fa-user-astronaut"></i> Astronauts</a>
+                <a class="nav-link text-dark" [routerLink]="['/astronaut-overview']">Astronauts</a>
             </li>
         </ul>
         <ul class="navbar-nav flex-grow">
             <li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
-                <a class="nav-link text-dark" [routerLink]="['/nasa-carousel']"><i class="fas fa-camera-retro"></i> Carousel</a>
+                <a class="nav-link text-dark" [routerLink]="['/nasa-carousel']">Carousel</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Heuts"><i class="fab fa-github"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://stackoverflow.com/users/10663624/h-heuts"><i class="fab fa-stack-overflow"></i></a>
             </li>
         </ul>
     </div>
