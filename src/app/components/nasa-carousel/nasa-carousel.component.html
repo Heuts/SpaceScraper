@@ -1,0 +1,13 @@
+<div class="container">
+    <h4>
+        Rotating images from NASA</h4>
+    <carousel>
+        <slide *ngFor="let nasaImage of nasaImages">
+            <div class="carousel-caption d-none d-md-block">
+                <h3>{{ nasaImage.title }}</h3>
+                <p>{{ nasaImage.explanation }}</p>
+            </div>
+            <img src="{{nasaImage.url}}" first slide style="display: block; width: 100%;">
+        </slide>
+    </carousel>
+</div>

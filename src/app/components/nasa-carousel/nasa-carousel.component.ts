@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { NasaImage } from 'src/app/models/nasa-image.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-nasa-carousel',
+  templateUrl: './nasa-carousel.component.html',
+  styleUrls: ['./nasa-carousel.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class NasaCarousel implements OnInit {
   private nasaApiKey: string = 'brw6sgkbz8BBd4LI6PAFYyVOeaIMBCh2Gn9WeZYv';
-  imageUrls: string[] = [];
   private baseUrl = 'https://api.nasa.gov/planetary/apod';
   private date: Date = new Date();
-  private amountOfImages = 3;
+  private amountOfImages = 20;
+  private disallowedUrl = 'https://www.youtube.com';
+  nasaImages: NasaImage[] = [];
 
   constructor(private http: HttpClient, private datePipe: DatePipe) { }
 
@@ -27,13 +29,24 @@ export class HomeComponent implements OnInit {
 
       const params = new HttpParams()
         .set('api_key', this.nasaApiKey)
-        .set('date', dateParam)
-        .set('hd', 'false');
+        .set('date', dateParam);
 
       this.http.get(`${this.baseUrl}`,
         { params: params })
         .subscribe(i => {
-          this.imageUrls.push(i['hdurl']);
+          if (i['url'].substring(0, this.disallowedUrl.length) === this.disallowedUrl) {
+            return;
+          } else {
+            const nasaImage: NasaImage = {
+              copyright: i['copyright'],
+              date: i['date'],
+              explanation: i['explanation'],
+              hdurl: i['hdurl'],
+              title: i['title'],
+              url: i['url'],
+            };
+            this.nasaImages.push(nasaImage);
+          }
         });
     }
   }
