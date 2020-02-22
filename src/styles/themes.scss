@@ -1,0 +1,27 @@
+@import 'light-space-palette.scss';
+@import 'dark-space-palette.scss';
+@import 'container.scss';
+
+@include mat-core();
+
+$light-space-primary: mat-palette($light-space-primary-palette);
+$light-space-accent:  mat-palette($light-space-accent-palette);
+$light-space-warn:    mat-palette($light-space-warn-palette);
+$light-space-theme:   mat-light-theme($light-space-primary, $light-space-accent, $light-space-warn);
+
+@include angular-material-theme($light-space-theme);
+
+// Dark theme
+.dark-theme {
+    color: $light-primary-text;
+    $dark-space-primary: mat-palette($dark-space-primary-palette);
+    $dark-space-accent: mat-palette($dark-space-accent-palette);
+    $dark-space-warn: mat-palette($dark-space-warn-palette);
+    $dark-space-theme: mat-dark-theme($dark-space-primary, $dark-space-accent, $dark-space-warn);
+
+    a:-webkit-any-link {
+      color: #fcba03;
+    }
+  
+    @include angular-material-theme($dark-space-theme);
+  }

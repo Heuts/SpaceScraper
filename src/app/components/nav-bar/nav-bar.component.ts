@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  isDarkTheme: Observable<boolean>;
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.isDarkTheme = this.themeService.isDarkTheme;
   }
 
+  toggleDarkTheme(checked: boolean) {
+    this.themeService.setDarkTheme(checked);
+  }
 }
