@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NasaCarousel } from './components/nasa-carousel/nasa-carousel.component';
 import { DatePipe } from '@angular/common';
 import { IntroductionComponent } from './components/introduction/introduction.component';
+import { TabGroupComponent } from './components/tab-group/tab-group.component';
 import { MaterialModule } from 'src/material.module';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MaterialModule } from 'src/material.module';
     AstronautOverviewComponent,
     NavBarComponent,
     NasaCarousel,
-    IntroductionComponent
+    IntroductionComponent,
+    TabGroupComponent
   ],
   imports: [
     BrowserModule,
