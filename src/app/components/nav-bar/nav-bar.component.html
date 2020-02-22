@@ -5,6 +5,8 @@
     <a class="nav-link" href="https://github.com/Heuts"><i class="fab fa-github"></i></a>
     <a class="nav-link" href="https://stackoverflow.com/users/10663624/h-heuts"><i
             class="fab fa-stack-overflow"></i></a>
+    <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">
+    </mat-slide-toggle>
 </mat-toolbar>
 
 <app-tab-group></app-tab-group>

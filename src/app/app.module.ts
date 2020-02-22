@@ -11,7 +11,8 @@ import { NasaCarousel } from './components/nasa-carousel/nasa-carousel.component
 import { DatePipe } from '@angular/common';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { TabGroupComponent } from './components/tab-group/tab-group.component';
-import { MaterialModule } from 'src/material.module';
+import { MaterialModule } from 'src/app/material.module';
+import { ThemeService } from './services/theme.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MaterialModule } from 'src/material.module';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
