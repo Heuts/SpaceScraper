@@ -1,0 +1,10 @@
+@import 'light-space-palette.scss';
+
+@include mat-core();
+
+$light-space-primary: mat-palette($light-space-primary-palette);
+$light-space-accent:  mat-palette($light-space-accent-palette);
+$light-space-warn:    mat-palette($light-space-warn-palette);
+$light-space-theme:   mat-light-theme($light-space-primary, $light-space-accent, $light-space-warn);
+
+@include angular-material-theme($light-space-theme);
