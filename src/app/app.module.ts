@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NasaCarousel } from './components/nasa-carousel/nasa-carousel.component';
 import { DatePipe } from '@angular/common';
 import { IntroductionComponent } from './components/introduction/introduction.component';
+import { MaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,7 @@ import { IntroductionComponent } from './components/introduction/introduction.co
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    AccordionModule.forRoot(),
-    CarouselModule.forRoot()
+    MaterialModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
