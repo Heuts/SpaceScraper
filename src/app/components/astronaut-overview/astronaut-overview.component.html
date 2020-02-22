@@ -18,12 +18,19 @@
   </p>
 
   <hr />
-  <accordion [isAnimated]="true">
-    <accordion-group
-      *ngFor="let astronaut of astronauts"
-      heading="{{ astronaut.name }}"
-    >
-    🚀 Spacecraft: {{ astronaut.craft }}
-    </accordion-group>
-  </accordion>
+
+  <mat-accordion *ngFor="let astronaut of astronauts">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ astronaut.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          Click on me to see what spacecraft I'm on!
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>🚀 Spacecraft: {{ astronaut.craft }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
